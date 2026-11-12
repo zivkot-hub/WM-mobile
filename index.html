@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WMmobile - testno okolje</title>
 <style>
-:root{--blue:#0875c9;--navy:#073764;--green:#2e9d31;--bg:#eef4f8;--line:#d7e3ec;--red:#c62828}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eaf3f8,#f8fbfd);color:#17334d}.hidden{display:none!important}
-.top{background:#073764;color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0002}.brand{font-size:22px;font-weight:800}.tag{font-size:12px;background:#ffca28;color:#25364a;padding:5px 9px;border-radius:99px;font-weight:700}
-.wrap{max-width:1050px;margin:30px auto;padding:0 16px}.card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #07376413;padding:24px;margin-bottom:18px}.login{max-width:430px;margin:70px auto}.logo{width:62px;height:62px;border-radius:15px;background:var(--blue);display:grid;place-items:center;color:white;font-size:28px;font-weight:900;margin-bottom:18px}
+:root{--blue:#0078b9;--navy:#064574;--green:#69b42e;--bg:#eef4f8;--line:#d7e3ec;--red:#c62828}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eff7fb,#f7fbf4);color:#17334d}.hidden{display:none!important}
+.top{background:linear-gradient(90deg,#0067a8,#007fc3);color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0002}.brand{font-size:22px;font-weight:800;display:flex;align-items:center;gap:12px}.hseMark{width:44px;height:44px;border-radius:50%;background:#69b42e;display:grid;place-items:center;border:4px solid #fff}.bolt{font-size:25px;color:white;font-weight:900;line-height:1}.hseText{font-size:29px;line-height:.9;font-weight:900;letter-spacing:-1px}.appName{font-size:12px;font-weight:600;opacity:.9;margin-top:6px}.tag{font-size:12px;background:#ffca28;color:#25364a;padding:5px 9px;border-radius:99px;font-weight:700}
+.wrap{max-width:1050px;margin:30px auto;padding:0 16px}.card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #07376413;padding:24px;margin-bottom:18px}.login{max-width:430px;margin:70px auto}.logo{width:62px;height:62px;border-radius:15px;background:linear-gradient(135deg,#0078b9,#69b42e);display:grid;place-items:center;color:white;font-size:24px;font-weight:900;margin-bottom:18px}
 h1{margin:0 0 8px;color:var(--navy)}h2{margin:0 0 16px;color:var(--navy)}p.muted{color:#607d92;margin-top:4px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#345066}.field input,.field select{width:100%;padding:12px 13px;border:1px solid #b9ccd9;border-radius:10px;background:#fff}.field input:focus,.field select:focus{outline:3px solid #0875c922;border-color:var(--blue)}
 .btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:white}.green{background:var(--green);color:white}.secondary{background:#e5eef5;color:#17334d}.danger{background:#fde8e8;color:var(--red)}.btn:focus{outline:3px solid #0875c944}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .notice{padding:12px 14px;background:#fff8db;border:1px solid #f1d778;border-radius:10px;margin:14px 0;color:#755b00}.success{background:#eaf7eb;border-color:#a5d8a7;color:#1d6b21}
@@ -17,10 +17,10 @@ table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;
 </style>
 </head>
 <body>
-<header class="top"><div class="brand">WMmobile</div><div class="tag">DEMO • BREZ SAP POVEZAVE</div></header>
+<header class="top"><div class="brand"><div class="hseMark"><span class="bolt">↯</span></div><div><div class="hseText">hse</div><div class="appName">WMmobile · skladiščno poslovanje</div></div></div><div class="tag">DEMO • BREZ SAP POVEZAVE</div></header>
 <main class="wrap">
 <section id="login" class="card login">
- <div class="logo">WM</div><h1>Prijava v skladiščno aplikacijo</h1>
+ <div class="logo">hse</div><h1>Prijava v skladiščno aplikacijo</h1><div style="color:#69b42e;font-weight:800;margin:-2px 0 14px">moč energije · testno okolje</div>
  <p class="muted">Testna simulacija. Uporabniško ime in geslo sta <b>demo / demo</b>.</p>
  <div class="notice">Ta različica ne kliče SAP-a in ne pošilja podatkov izven te strani.</div>
  <div class="field"><label for="user">Uporabniško ime</label><input id="user" autocomplete="username" value="demo"></div><br>
