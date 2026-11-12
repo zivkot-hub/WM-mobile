@@ -1,99 +1,40 @@
 <!doctype html>
 <html lang="sl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WMmobile - testno okolje</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HSE WMmobile - demo</title>
 <style>
-:root{--blue:#0078b9;--navy:#064574;--green:#69b42e;--bg:#eef4f8;--line:#d7e3ec;--red:#c62828}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eff7fb,#f7fbf4);color:#17334d}.hidden{display:none!important}
-.top{background:linear-gradient(90deg,#0067a8,#007fc3);color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0002}.brand{font-size:22px;font-weight:800;display:flex;align-items:center;gap:12px}.hseMark{width:44px;height:44px;border-radius:50%;background:#69b42e;display:grid;place-items:center;border:4px solid #fff}.bolt{font-size:25px;color:white;font-weight:900;line-height:1}.hseText{font-size:29px;line-height:.9;font-weight:900;letter-spacing:-1px}.appName{font-size:12px;font-weight:600;opacity:.9;margin-top:6px}.tag{font-size:12px;background:#ffca28;color:#25364a;padding:5px 9px;border-radius:99px;font-weight:700}
-.wrap{max-width:1050px;margin:30px auto;padding:0 16px}.card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #07376413;padding:24px;margin-bottom:18px}.login{max-width:430px;margin:70px auto}.logo{width:62px;height:62px;border-radius:15px;background:linear-gradient(135deg,#0078b9,#69b42e);display:grid;place-items:center;color:white;font-size:24px;font-weight:900;margin-bottom:18px}
-h1{margin:0 0 8px;color:var(--navy)}h2{margin:0 0 16px;color:var(--navy)}p.muted{color:#607d92;margin-top:4px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#345066}.field input,.field select{width:100%;padding:12px 13px;border:1px solid #b9ccd9;border-radius:10px;background:#fff}.field input:focus,.field select:focus{outline:3px solid #0875c922;border-color:var(--blue)}
-.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:white}.green{background:var(--green);color:white}.secondary{background:#e5eef5;color:#17334d}.danger{background:#fde8e8;color:var(--red)}.btn:focus{outline:3px solid #0875c944}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.notice{padding:12px 14px;background:#fff8db;border:1px solid #f1d778;border-radius:10px;margin:14px 0;color:#755b00}.success{background:#eaf7eb;border-color:#a5d8a7;color:#1d6b21}
-table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #e4edf3;font-size:14px}th{color:#526c7e;background:#f6f9fb}.pill{display:inline-block;padding:5px 9px;border-radius:99px;background:#e8f3fb;color:#0769b0;font-size:12px;font-weight:700}.empty{text-align:center;padding:25px;color:#70899a;border:2px dashed #d4e0e8;border-radius:12px;margin-top:12px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:14px;background:#f4f8fb;border-radius:12px}.stat b{display:block;font-size:20px;color:var(--navy)}
-@media(max-width:700px){.grid,.summary{grid-template-columns:1fr}.wrap{margin:18px auto}.card{padding:18px}.top{padding:12px 14px}}
-</style>
-</head>
+:root{--blue:#0078b9;--navy:#064574;--green:#69b42e;--bg:#eef6fa;--line:#d7e5ed;--warn:#ffc928;--red:#c62828;--ink:#17384f}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef7fb,#f7fbf4);color:var(--ink)}button,input,select{font:inherit}.hidden{display:none!important}.top{background:linear-gradient(90deg,#0069a8,#0084c5);color:#fff;padding:13px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 16px #06457433}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border:4px solid #fff;border-radius:50%;background:var(--green);display:grid;place-items:center;font-size:25px;font-weight:900}.hse{font-size:30px;font-weight:900;line-height:.85}.sub{font-size:12px;margin-top:6px}.demo{background:var(--warn);color:#313b44;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:800}.wrap{max-width:1050px;margin:26px auto;padding:0 15px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:0 10px 28px #06457412;padding:22px;margin-bottom:17px}.login{max-width:500px;margin:65px auto}.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}.role{padding:18px;border:2px solid var(--line);border-radius:13px;background:#fff;cursor:pointer;text-align:left}.role:hover,.role:focus{border-color:var(--blue);outline:none}.role b{display:block;color:var(--navy);font-size:17px;margin-bottom:5px}.pill{display:inline-block;background:#e6f3fb;color:#066ba8;padding:5px 9px;border-radius:99px;font-size:12px;font-weight:800}h1,h2{color:var(--navy);margin:0 0 12px}.muted{color:#627e8e}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field label{display:block;font-weight:800;font-size:13px;margin-bottom:6px}.field input,.field select{width:100%;padding:11px 12px;border:1px solid #b8cbd7;border-radius:9px;background:#fff}.btn{border:0;border-radius:9px;padding:11px 16px;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:#fff}.green{background:var(--green);color:#fff}.secondary{background:#e5eef4;color:var(--ink)}.danger{background:#fde9e9;color:var(--red)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.banner{padding:12px 14px;border-radius:10px;background:#fff7d8;border:1px solid #efd56e;margin:12px 0}.ok{background:#ebf8eb;border-color:#abd8ad;color:#206a24}.mail{background:#eef7fc;border-color:#b7dced}.topline{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{padding:10px 8px;border-bottom:1px solid #e5edf2;text-align:left;font-size:14px}th{background:#f5f9fb;color:#577183}.empty{text-align:center;padding:24px;border:2px dashed #d4e1e9;border-radius:12px;color:#718998}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.step{padding:12px;border-radius:10px;background:#edf3f6;color:#6b8290;font-size:12px;font-weight:800}.step.done{background:#e8f6e9;color:#26722b}.step.current{background:#e5f3fb;color:#0874b7;box-shadow:inset 0 0 0 2px #8bc7e8}.request{border:1px solid var(--line);border-radius:13px;padding:16px;margin-top:12px}.request h3{margin:0 0 6px;color:var(--navy)}.badge{padding:4px 8px;border-radius:99px;font-size:11px;font-weight:800;background:#fff2be;color:#7b6100}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f3f8fa;border-radius:11px;padding:13px}.stat b{display:block;color:var(--navy);font-size:18px;margin-top:4px}@media(max-width:700px){.grid,.role-grid,.status,.summary{grid-template-columns:1fr}.top{padding:11px 12px}.wrap{margin:16px auto}.card{padding:17px}.demo{font-size:10px}}
+</style></head>
 <body>
-<header class="top"><div class="brand"><div class="hseMark"><span class="bolt">↯</span></div><div><div class="hseText">hse</div><div class="appName">WMmobile · skladiščno poslovanje</div></div></div><div class="tag">DEMO • BREZ SAP POVEZAVE</div></header>
+<header class="top"><div class="brand"><div class="mark">↯</div><div><div class="hse">hse</div><div class="sub">WMmobile · skladiščno poslovanje</div></div></div><div class="demo">DEMO · BREZ SAP IN E-POŠTE</div></header>
 <main class="wrap">
-<section id="login" class="card login">
- <div class="logo">hse</div><h1>Prijava v skladiščno aplikacijo</h1><div style="color:#69b42e;font-weight:800;margin:-2px 0 14px">moč energije · testno okolje</div>
- <p class="muted">Testna simulacija. Uporabniško ime in geslo sta <b>demo / demo</b>.</p>
- <div class="notice">Ta različica ne kliče SAP-a in ne pošilja podatkov izven te strani.</div>
- <div class="field"><label for="user">Uporabniško ime</label><input id="user" autocomplete="username" value="demo"></div><br>
- <div class="field"><label for="pass">Geslo</label><input id="pass" type="password" autocomplete="current-password" value="demo"></div>
- <div class="actions"><button class="btn primary" id="loginBtn" type="button">PRIJAVA</button></div>
- <p id="loginMsg" aria-live="polite"></p>
+<section id="start" class="card login"><span class="pill">TESTNO OKOLJE</span><h1 style="margin-top:10px">Izberi demo pogled</h1><p class="muted">Vsi podatki ostanejo samo v tem brskalniku. Prijava je simulirana z uporabnikom <b>demo</b> in geslom <b>demo</b>.</p><div class="grid"><div class="field"><label>Uporabnik</label><input id="user" value="demo"></div><div class="field"><label>Geslo</label><input id="pass" type="password" value="demo"></div></div><div class="role-grid"><button class="role" data-role="warehouse"><b>📦 Skladiščnik</b><span>Ustvari izdajo in spremlja status.</span></button><button class="role" data-role="manager"><b>✅ Nadrejeni</b><span>Pregleda materiale in določi kontiranje.</span></button></div><p id="loginMsg" aria-live="polite"></p></section>
+
+<section id="warehouse" class="hidden">
+<div class="card topline"><div><span class="pill">POGLED SKLADIŠČNIKA</span><h1 style="margin-top:9px">Izdaja materiala</h1><p class="muted">Skladiščnik evidentira prevzemnika in materiale. Kontiranje določi nadrejeni.</p></div><div class="actions"><button class="btn secondary" id="wRefresh">Osveži status</button><button class="btn secondary home">Menjava pogleda</button></div></div>
+<div id="warehouseNotice" class="banner mail hidden"></div>
+<div class="card"><h2>1. Prevzemnik</h2><div class="grid"><div class="field"><label>Zaposleni / zadolženec</label><input id="employee" value="5000000"></div><div class="field"><label>Skladiščnik</label><input value="DEMO" readonly></div></div></div>
+<div class="card"><h2>2. Dodaj material</h2><div class="grid"><div class="field"><label>Material / skeniraj</label><input id="material" placeholder="npr. 700010"></div><div class="field"><label>Količina</label><input id="qty" type="number" value="1" min="0.001" step="0.001"></div><div class="field"><label>Enota</label><select id="uom"><option>KOS</option><option>KG</option><option>L</option><option>M</option></select></div><div class="field"><label>Obrat</label><input id="plant" value="1500"></div><div class="field"><label>Skladiščna lokacija</label><input id="sloc" value="1501"></div></div><div class="actions"><button class="btn secondary" id="scan">Simuliraj sken 700010</button><button class="btn primary" id="add">Dodaj material</button></div></div>
+<div class="card"><h2>3. Seznam materialov</h2><div id="empty" class="empty">Ni dodanih materialov.</div><div id="itemsWrap" class="hidden"><table><thead><tr><th>Material</th><th>Količina</th><th>EM</th><th>Obrat</th><th>Lokacija</th><th></th></tr></thead><tbody id="items"></tbody></table></div><div class="actions"><button class="btn green" id="send">Pošlji nadrejenemu</button></div></div>
+<div class="card"><h2>Status zadnjega zahtevka</h2><div id="noStatus" class="empty">Zahtevek še ni ustvarjen.</div><div id="statusBox" class="hidden"><div class="status"><div class="step done">1 · Ustvarjeno</div><div id="stSent" class="step">2 · Poslano vodji</div><div id="stApproved" class="step">3 · Potrjeno</div><div id="stReservation" class="step">4 · Rezervacija</div></div><div id="warehouseResult" class="banner hidden"></div></div></div>
 </section>
 
-<section id="app" class="hidden">
- <div class="card">
-   <div style="display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap">
-    <div><span class="pill">IZDAJA MATERIALA</span><h1 style="margin-top:8px">Nov zahtevek</h1><p class="muted">Izberi zaposlenega, nato dodajaj ali simuliraj skeniranje materialov.</p></div>
-    <button class="btn secondary" id="logout" type="button">Odjava</button>
-   </div>
-   <div class="grid">
-    <div class="field"><label for="employee">Zaposleni / prejemnik</label><input id="employee" value="5000000" placeholder="npr. 5000000"></div>
-    <div class="field"><label for="warehouse">Skladiščnik</label><input id="warehouse" value="DEMO" readonly></div>
-   </div>
- </div>
-
- <div class="card">
-   <h2>Dodaj material</h2>
-   <div class="grid">
-    <div class="field"><label for="material">Material / skeniraj kodo</label><input id="material" placeholder="npr. 700010"></div>
-    <div class="field"><label for="qty">Količina</label><input id="qty" type="number" min="0.001" step="0.001" value="1"></div>
-    <div class="field"><label for="uom">Enota</label><select id="uom"><option>KOS</option><option>KG</option><option>L</option><option>M</option></select></div>
-    <div class="field"><label for="plant">Obrat</label><input id="plant" value="1500"></div>
-    <div class="field"><label for="sloc">Skladiščna lokacija</label><input id="sloc" value="1501"></div>
-   </div>
-   <div class="actions"><button class="btn secondary" id="scanDemo" type="button">SIMULIRAJ SKEN 700010</button><button class="btn primary" id="add" type="button">DODAJ MATERIAL</button></div>
- </div>
-
- <div class="card">
-  <h2>Materiali na zahtevku</h2>
-  <div id="empty" class="empty">Na zahtevku še ni materialov.</div>
-  <div id="tableWrap" class="hidden"><table><thead><tr><th>Material</th><th>Količina</th><th>EM</th><th>Obrat</th><th>Lokacija</th><th></th></tr></thead><tbody id="items"></tbody></table></div>
-  <div class="actions"><button class="btn green" id="send" type="button">POŠLJI NADREJENEMU</button></div>
-  <p id="sendMsg" aria-live="polite"></p>
- </div>
-
- <div id="approval" class="card hidden">
-  <span class="pill">SIMULACIJA NADREJENEGA</span><h2 style="margin-top:10px">Določitev kontiranja</h2>
-  <div class="grid">
-   <div class="field"><label for="type">Vrsta izdaje</label><select id="type"><option value="PM">PM nalog (261)</option><option value="SM">Stroškovno mesto (201)</option><option value="ZDI">Zadolžitev osebe (911)</option></select></div>
-   <div class="field" id="orderField"><label for="order">PM nalog</label><input id="order" value="40000060"></div>
-   <div class="field hidden" id="ccField"><label for="costcenter">Stroškovno mesto</label><input id="costcenter" value="1100106001"></div>
-  </div>
-  <div class="actions"><button class="btn green" id="approve" type="button">POTRDI IN SIMULIRAJ SAP</button></div>
- </div>
-
- <div id="result" class="card hidden">
-  <h2>Rezultat simulacije</h2>
-  <div class="success notice" id="resultText"></div>
-  <div class="summary"><div class="stat">Status<b>ODOBRENO</b></div><div class="stat">Rezervacija<b id="rsnum">—</b></div><div class="stat">Zadolženec<b id="who">—</b></div></div>
-  <div class="actions"><button class="btn primary" id="newReq" type="button">NOV ZAHTEVEK</button></div>
- </div>
+<section id="manager" class="hidden">
+<div class="card topline"><div><span class="pill">POGLED NADREJENEGA</span><h1 style="margin-top:9px">Zahtevki za odobritev</h1><p class="muted">Simulacija vsebine povezave iz e-poštnega obvestila.</p></div><div class="actions"><button class="btn secondary" id="mRefresh">Osveži seznam</button><button class="btn secondary home">Menjava pogleda</button></div></div>
+<div id="managerEmpty" class="card empty">Ni zahtevkov, ki čakajo na odobritev.</div><div id="managerRequest" class="card hidden"></div>
 </section>
 </main>
 <script>
-(function(){
-'use strict';
-const $=id=>document.getElementById(id);let items=[];
-function render(){const body=$('items');body.innerHTML='';items.forEach((x,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${x.material}</td><td>${x.qty}</td><td>${x.uom}</td><td>${x.plant}</td><td>${x.sloc}</td><td><button type="button" class="btn danger" data-i="${i}">Odstrani</button></td>`;body.appendChild(tr)});$('empty').classList.toggle('hidden',items.length>0);$('tableWrap').classList.toggle('hidden',items.length===0);body.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{items.splice(Number(b.dataset.i),1);render()}));}
-$('loginBtn').addEventListener('click',()=>{if($('user').value==='demo'&&$('pass').value==='demo'){$('login').classList.add('hidden');$('app').classList.remove('hidden');$('loginMsg').textContent='';}else $('loginMsg').textContent='Napačna prijava. Za demo uporabi demo / demo.';});
-$('logout').addEventListener('click',()=>{location.reload()});
-$('scanDemo').addEventListener('click',()=>{$('material').value='700010';$('qty').value='1';$('uom').value='KOS';$('plant').value='1500';$('sloc').value='1501';$('material').focus()});
-$('add').addEventListener('click',()=>{const m=$('material').value.trim(),q=Number($('qty').value),p=$('plant').value.trim(),s=$('sloc').value.trim();if(!m||!Number.isFinite(q)||q<=0||!p||!s){alert('Vnesi material, količino, obrat in skladiščno lokacijo.');return}items.push({material:m,qty:q,uom:$('uom').value,plant:p,sloc:s});$('material').value='';render();$('material').focus()});
-$('send').addEventListener('click',()=>{if(!$('employee').value.trim()){alert('Vnesi zaposlenega / prejemnika.');return}if(!items.length){alert('Dodaj vsaj en material.');return}$('sendMsg').textContent='Zahtevek DEMO-'+Date.now()+' je simulirano poslan nadrejenemu.';$('approval').classList.remove('hidden');$('approval').scrollIntoView({behavior:'smooth'});});
-$('type').addEventListener('change',()=>{const pm=$('type').value==='PM';$('orderField').classList.toggle('hidden',!pm);$('ccField').classList.toggle('hidden',pm)});
-$('approve').addEventListener('click',()=>{const t=$('type').value;if(t==='PM'&&!$('order').value.trim()){alert('Vnesi PM nalog.');return}if(t!=='PM'&&!$('costcenter').value.trim()){alert('Vnesi stroškovno mesto.');return}const n=String(Math.floor(Math.random()*9000)+1000).padStart(10,'0');const desc=t==='PM'?'261 / PM nalog '+$('order').value.trim():t==='SM'?'201 / stroškovno mesto '+$('costcenter').value.trim():'911 / zadolžitev / stroškovno mesto '+$('costcenter').value.trim();$('rsnum').textContent=n;$('who').textContent=$('employee').value.trim();$('resultText').textContent='SIMULACIJA: SAP bi kreiral rezervacijo '+n+' za '+desc+'. Noben klic v SAP ni bil izveden.';$('result').classList.remove('hidden');$('result').scrollIntoView({behavior:'smooth'});});
-$('newReq').addEventListener('click',()=>{items=[];render();$('approval').classList.add('hidden');$('result').classList.add('hidden');$('sendMsg').textContent='';$('material').value='';window.scrollTo({top:0,behavior:'smooth'})});
-render();
+(function(){'use strict';const $=id=>document.getElementById(id);let draft=[];const KEY='hse_wm_demo_request';
+function getReq(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}function saveReq(r){localStorage.setItem(KEY,JSON.stringify(r))}function show(id){['start','warehouse','manager'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo(0,0)}
+function auth(){if($('user').value!=='demo'||$('pass').value!=='demo'){$('loginMsg').textContent='Za demo uporabi demo / demo.';return false}return true}
+document.querySelectorAll('.role').forEach(b=>b.addEventListener('click',()=>{if(!auth())return;show(b.dataset.role);b.dataset.role==='warehouse'?renderWarehouse():renderManager()}));document.querySelectorAll('.home').forEach(b=>b.addEventListener('click',()=>show('start')));
+function renderItems(){const body=$('items');body.innerHTML='';draft.forEach((x,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${x.material}</td><td>${x.qty}</td><td>${x.uom}</td><td>${x.plant}</td><td>${x.sloc}</td><td><button class="btn danger" data-i="${i}">Odstrani</button></td>`;body.appendChild(tr)});body.querySelectorAll('button').forEach(b=>b.onclick=()=>{draft.splice(+b.dataset.i,1);renderItems()});$('empty').classList.toggle('hidden',draft.length>0);$('itemsWrap').classList.toggle('hidden',draft.length===0)}
+$('scan').onclick=()=>{$('material').value='700010';$('qty').value=1;$('uom').value='KOS';$('plant').value='1500';$('sloc').value='1501'};$('add').onclick=()=>{const x={material:$('material').value.trim(),qty:Number($('qty').value),uom:$('uom').value,plant:$('plant').value.trim(),sloc:$('sloc').value.trim()};if(!x.material||!x.qty||x.qty<=0||!x.plant||!x.sloc){alert('Vnesi material, količino, obrat in lokacijo.');return}draft.push(x);$('material').value='';renderItems()};
+$('send').onclick=()=>{if(!$('employee').value.trim()||!draft.length){alert('Vnesi prevzemnika in dodaj vsaj en material.');return}const req={id:'WM-'+Date.now(),employee:$('employee').value.trim(),warehouse:'DEMO',created:new Date().toLocaleString('sl-SI'),items:draft,status:'WAITING',mailSent:true};saveReq(req);draft=[];renderItems();renderWarehouse();$('warehouseNotice').textContent='SIMULACIJA E-POŠTE: Nadrejeni je prejel povezavo do zahtevka '+req.id+'. Za test izberi pogled Nadrejeni.';$('warehouseNotice').classList.remove('hidden')};
+function renderWarehouse(){const r=getReq();$('noStatus').classList.toggle('hidden',!!r);$('statusBox').classList.toggle('hidden',!r);if(!r)return;$('stSent').className='step done';$('stApproved').className='step '+(r.status==='WAITING'?'current':'done');$('stReservation').className='step '+(r.status==='APPROVED'?'done':r.status==='WAITING'?'':'current');const box=$('warehouseResult');box.classList.toggle('hidden',r.status!=='APPROVED');if(r.status==='APPROVED'){box.className='banner ok';box.innerHTML=`Rezervacija <b>${r.rsnum}</b> je kreirana. Vrsta: <b>${r.issueText}</b>. Zahtevek ${r.id} je pripravljen za knjiženje.`}}$('wRefresh').onclick=renderWarehouse;
+function renderManager(){const r=getReq();const has=r&&r.status==='WAITING';$('managerEmpty').classList.toggle('hidden',has);$('managerRequest').classList.toggle('hidden',!has);if(!has)return;const rows=r.items.map(x=>`<tr><td>${x.material}</td><td>${x.qty} ${x.uom}</td><td>${x.plant}</td><td>${x.sloc}</td></tr>`).join('');$('managerRequest').innerHTML=`<div class="topline"><div><span class="badge">ČAKA NA ODOBRITEV</span><h2 style="margin-top:9px">${r.id}</h2></div><div class="muted">${r.created}</div></div><div class="summary"><div class="stat">Prevzemnik<b>${r.employee}</b></div><div class="stat">Skladiščnik<b>${r.warehouse}</b></div><div class="stat">Postavke<b>${r.items.length}</b></div></div><table><thead><tr><th>Material</th><th>Količina</th><th>Obrat</th><th>Lokacija</th></tr></thead><tbody>${rows}</tbody></table><h2 style="margin-top:22px">Določi vrsto izdaje</h2><div class="grid"><div class="field"><label>Vrsta izdaje</label><select id="issueType"><option value="PM">PM nalog (261)</option><option value="SM">Stroškovno mesto (201)</option><option value="ZDI">Zadolžitev osebe (911)</option></select></div><div class="field" id="pmBox"><label>PM nalog</label><input id="aufnr" value="40000060"></div><div class="field hidden" id="ccBox"><label>Stroškovno mesto</label><input id="kostl" value="1100106001"></div></div><div class="actions"><button class="btn green" id="approve">Potrdi in simuliraj SAP</button></div><div class="banner mail">Po potrditvi se status zahtevka simulirano vrne skladiščniku. V produkciji bi se tukaj klicala funkcija Z_WM_KREIRAJ_REZERVACIJO.</div>`;const type=$('issueType');type.onchange=()=>{const pm=type.value==='PM';$('pmBox').classList.toggle('hidden',!pm);$('ccBox').classList.toggle('hidden',pm)};$('approve').onclick=()=>{const t=type.value,ref=t==='PM'?$('aufnr').value.trim():$('kostl').value.trim();if(!ref){alert('Vnesi podatek za kontiranje.');return}r.status='APPROVED';r.issueType=t;r.issueText=t==='PM'?'261 / PM nalog '+ref:t==='SM'?'201 / stroškovno mesto '+ref:'911 / zadolžitev / stroškovno mesto '+ref;r.rsnum=String(Math.floor(Math.random()*900000)+100000).padStart(10,'0');r.approved=new Date().toLocaleString('sl-SI');saveReq(r);renderManager();alert('Potrjeno. Rezervacija '+r.rsnum+' je simulirano kreirana. Skladiščnik lahko osveži svoj status.')};}
+$('mRefresh').onclick=renderManager;renderItems();
 })();
-</script>
-</body>
-</html>
+</script></body></html>
