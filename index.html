@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WMmobile - testno okolje</title>
+<style>
+:root{--blue:#0875c9;--navy:#073764;--green:#2e9d31;--bg:#eef4f8;--line:#d7e3ec;--red:#c62828}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eaf3f8,#f8fbfd);color:#17334d}.hidden{display:none!important}
+.top{background:#073764;color:white;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0002}.brand{font-size:22px;font-weight:800}.tag{font-size:12px;background:#ffca28;color:#25364a;padding:5px 9px;border-radius:99px;font-weight:700}
+.wrap{max-width:1050px;margin:30px auto;padding:0 16px}.card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #07376413;padding:24px;margin-bottom:18px}.login{max-width:430px;margin:70px auto}.logo{width:62px;height:62px;border-radius:15px;background:var(--blue);display:grid;place-items:center;color:white;font-size:28px;font-weight:900;margin-bottom:18px}
+h1{margin:0 0 8px;color:var(--navy)}h2{margin:0 0 16px;color:var(--navy)}p.muted{color:#607d92;margin-top:4px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#345066}.field input,.field select{width:100%;padding:12px 13px;border:1px solid #b9ccd9;border-radius:10px;background:#fff}.field input:focus,.field select:focus{outline:3px solid #0875c922;border-color:var(--blue)}
+.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:white}.green{background:var(--green);color:white}.secondary{background:#e5eef5;color:#17334d}.danger{background:#fde8e8;color:var(--red)}.btn:focus{outline:3px solid #0875c944}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.notice{padding:12px 14px;background:#fff8db;border:1px solid #f1d778;border-radius:10px;margin:14px 0;color:#755b00}.success{background:#eaf7eb;border-color:#a5d8a7;color:#1d6b21}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #e4edf3;font-size:14px}th{color:#526c7e;background:#f6f9fb}.pill{display:inline-block;padding:5px 9px;border-radius:99px;background:#e8f3fb;color:#0769b0;font-size:12px;font-weight:700}.empty{text-align:center;padding:25px;color:#70899a;border:2px dashed #d4e0e8;border-radius:12px;margin-top:12px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:14px;background:#f4f8fb;border-radius:12px}.stat b{display:block;font-size:20px;color:var(--navy)}
+@media(max-width:700px){.grid,.summary{grid-template-columns:1fr}.wrap{margin:18px auto}.card{padding:18px}.top{padding:12px 14px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand">WMmobile</div><div class="tag">DEMO • BREZ SAP POVEZAVE</div></header>
+<main class="wrap">
+<section id="login" class="card login">
+ <div class="logo">WM</div><h1>Prijava v skladiščno aplikacijo</h1>
+ <p class="muted">Testna simulacija. Uporabniško ime in geslo sta <b>demo / demo</b>.</p>
+ <div class="notice">Ta različica ne kliče SAP-a in ne pošilja podatkov izven te strani.</div>
+ <div class="field"><label for="user">Uporabniško ime</label><input id="user" autocomplete="username" value="demo"></div><br>
+ <div class="field"><label for="pass">Geslo</label><input id="pass" type="password" autocomplete="current-password" value="demo"></div>
+ <div class="actions"><button class="btn primary" id="loginBtn" type="button">PRIJAVA</button></div>
+ <p id="loginMsg" aria-live="polite"></p>
+</section>
+
+<section id="app" class="hidden">
+ <div class="card">
+   <div style="display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap">
+    <div><span class="pill">IZDAJA MATERIALA</span><h1 style="margin-top:8px">Nov zahtevek</h1><p class="muted">Izberi zaposlenega, nato dodajaj ali simuliraj skeniranje materialov.</p></div>
+    <button class="btn secondary" id="logout" type="button">Odjava</button>
+   </div>
+   <div class="grid">
+    <div class="field"><label for="employee">Zaposleni / prejemnik</label><input id="employee" value="5000000" placeholder="npr. 5000000"></div>
+    <div class="field"><label for="warehouse">Skladiščnik</label><input id="warehouse" value="DEMO" readonly></div>
+   </div>
+ </div>
+
+ <div class="card">
+   <h2>Dodaj material</h2>
+   <div class="grid">
+    <div class="field"><label for="material">Material / skeniraj kodo</label><input id="material" placeholder="npr. 700010"></div>
+    <div class="field"><label for="qty">Količina</label><input id="qty" type="number" min="0.001" step="0.001" value="1"></div>
+    <div class="field"><label for="uom">Enota</label><select id="uom"><option>KOS</option><option>KG</option><option>L</option><option>M</option></select></div>
+    <div class="field"><label for="plant">Obrat</label><input id="plant" value="1500"></div>
+    <div class="field"><label for="sloc">Skladiščna lokacija</label><input id="sloc" value="1501"></div>
+   </div>
+   <div class="actions"><button class="btn secondary" id="scanDemo" type="button">SIMULIRAJ SKEN 700010</button><button class="btn primary" id="add" type="button">DODAJ MATERIAL</button></div>
+ </div>
+
+ <div class="card">
+  <h2>Materiali na zahtevku</h2>
+  <div id="empty" class="empty">Na zahtevku še ni materialov.</div>
+  <div id="tableWrap" class="hidden"><table><thead><tr><th>Material</th><th>Količina</th><th>EM</th><th>Obrat</th><th>Lokacija</th><th></th></tr></thead><tbody id="items"></tbody></table></div>
+  <div class="actions"><button class="btn green" id="send" type="button">POŠLJI NADREJENEMU</button></div>
+  <p id="sendMsg" aria-live="polite"></p>
+ </div>
+
+ <div id="approval" class="card hidden">
+  <span class="pill">SIMULACIJA NADREJENEGA</span><h2 style="margin-top:10px">Določitev kontiranja</h2>
+  <div class="grid">
+   <div class="field"><label for="type">Vrsta izdaje</label><select id="type"><option value="PM">PM nalog (261)</option><option value="SM">Stroškovno mesto (201)</option><option value="ZDI">Zadolžitev osebe (911)</option></select></div>
+   <div class="field" id="orderField"><label for="order">PM nalog</label><input id="order" value="40000060"></div>
+   <div class="field hidden" id="ccField"><label for="costcenter">Stroškovno mesto</label><input id="costcenter" value="1100106001"></div>
+  </div>
+  <div class="actions"><button class="btn green" id="approve" type="button">POTRDI IN SIMULIRAJ SAP</button></div>
+ </div>
+
+ <div id="result" class="card hidden">
+  <h2>Rezultat simulacije</h2>
+  <div class="success notice" id="resultText"></div>
+  <div class="summary"><div class="stat">Status<b>ODOBRENO</b></div><div class="stat">Rezervacija<b id="rsnum">—</b></div><div class="stat">Zadolženec<b id="who">—</b></div></div>
+  <div class="actions"><button class="btn primary" id="newReq" type="button">NOV ZAHTEVEK</button></div>
+ </div>
+</section>
+</main>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);let items=[];
+function render(){const body=$('items');body.innerHTML='';items.forEach((x,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${x.material}</td><td>${x.qty}</td><td>${x.uom}</td><td>${x.plant}</td><td>${x.sloc}</td><td><button type="button" class="btn danger" data-i="${i}">Odstrani</button></td>`;body.appendChild(tr)});$('empty').classList.toggle('hidden',items.length>0);$('tableWrap').classList.toggle('hidden',items.length===0);body.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{items.splice(Number(b.dataset.i),1);render()}));}
+$('loginBtn').addEventListener('click',()=>{if($('user').value==='demo'&&$('pass').value==='demo'){$('login').classList.add('hidden');$('app').classList.remove('hidden');$('loginMsg').textContent='';}else $('loginMsg').textContent='Napačna prijava. Za demo uporabi demo / demo.';});
+$('logout').addEventListener('click',()=>{location.reload()});
+$('scanDemo').addEventListener('click',()=>{$('material').value='700010';$('qty').value='1';$('uom').value='KOS';$('plant').value='1500';$('sloc').value='1501';$('material').focus()});
+$('add').addEventListener('click',()=>{const m=$('material').value.trim(),q=Number($('qty').value),p=$('plant').value.trim(),s=$('sloc').value.trim();if(!m||!Number.isFinite(q)||q<=0||!p||!s){alert('Vnesi material, količino, obrat in skladiščno lokacijo.');return}items.push({material:m,qty:q,uom:$('uom').value,plant:p,sloc:s});$('material').value='';render();$('material').focus()});
+$('send').addEventListener('click',()=>{if(!$('employee').value.trim()){alert('Vnesi zaposlenega / prejemnika.');return}if(!items.length){alert('Dodaj vsaj en material.');return}$('sendMsg').textContent='Zahtevek DEMO-'+Date.now()+' je simulirano poslan nadrejenemu.';$('approval').classList.remove('hidden');$('approval').scrollIntoView({behavior:'smooth'});});
+$('type').addEventListener('change',()=>{const pm=$('type').value==='PM';$('orderField').classList.toggle('hidden',!pm);$('ccField').classList.toggle('hidden',pm)});
+$('approve').addEventListener('click',()=>{const t=$('type').value;if(t==='PM'&&!$('order').value.trim()){alert('Vnesi PM nalog.');return}if(t!=='PM'&&!$('costcenter').value.trim()){alert('Vnesi stroškovno mesto.');return}const n=String(Math.floor(Math.random()*9000)+1000).padStart(10,'0');const desc=t==='PM'?'261 / PM nalog '+$('order').value.trim():t==='SM'?'201 / stroškovno mesto '+$('costcenter').value.trim():'911 / zadolžitev / stroškovno mesto '+$('costcenter').value.trim();$('rsnum').textContent=n;$('who').textContent=$('employee').value.trim();$('resultText').textContent='SIMULACIJA: SAP bi kreiral rezervacijo '+n+' za '+desc+'. Noben klic v SAP ni bil izveden.';$('result').classList.remove('hidden');$('result').scrollIntoView({behavior:'smooth'});});
+$('newReq').addEventListener('click',()=>{items=[];render();$('approval').classList.add('hidden');$('result').classList.add('hidden');$('sendMsg').textContent='';$('material').value='';window.scrollTo({top:0,behavior:'smooth'})});
+render();
+})();
+</script>
+</body>
+</html>
